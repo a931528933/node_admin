@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<body>
+	<form id="up">
+		<input type="file" name="logo">
+    <input type="button" onclick="editUserInfo()" value="提交">
+  </form>
+  &lt;script&gt;alert(&apos;ujkj&apos;)&lt;/scrdipt&gt;
+  &lt;script&gt;alert(&apos;ujkj&apos;)&lt;/script&gt;
+</body>
+<script type="text/javascript">
+	function editUserInfo() {
+    var formData = new FormData(document.getElementById('up'));
+    formData.append('user_name','sdfds');
+    $.ajax({
+      url: 'http://120.77.37.87/user/add',
+      type: "POST",
+      data: formData,
+      processData: false,
+      contentType: false,
+      success: function (obj) {
+		  console.log(obj)
+      },
+      error: function (obj) {
+        // alert('服务器请求失败');
+      }
+    })
+  }
+
+</script>
+</html>
