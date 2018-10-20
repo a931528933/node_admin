@@ -8,4 +8,9 @@ ctrl.get('/index',(ctx,next) => {
     var param = ctx.request.query;
     ctx.response.body = fs.readFileSync(__dirname+'/../index.html');
 })
+ctrl.get('/en',(ctx,next) => {
+    ctx.response.type = "html";
+    var param = ctx.request.query;
+    ctx.response.body = fs.readFileSync(__dirname+'/../index-en.html');
+})
 module.exports = ctrl;
